@@ -1,0 +1,42 @@
+<h1>Inventory#index</h1>
+<p>Here stay all items.</p>
+
+<h1>Items</h1>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>      
+      <a href="<%= item_path(item) %>">
+        <p>Product: <%= item.name %></p>
+        <p>quantity: <%= item.quantity %></p>
+        <p>Value: <%= item.formatted_price %></p>
+      </a>
+      <%= link_to 'Edit', edit_item_path(item), class: "btn btn-primary" %>
+    </li>
+  <% end %>
+</ul>
+
+<div class ="dashboard">
+  <p>
+    <strong>Total Stock Value:</strong>
+    <%= Item.formatted_total_stock_value %>
+  </p>
+</div>
+
+<div class="Buttons">
+  <%= link_to 'Add Item', new_item_path, class: "btn btn-success" %> |
+  <%= link_to 'Home', root_path, class: "btn btn-success" %>
+</div>
+
+<style>
+  .dashboard {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 300px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+</style>

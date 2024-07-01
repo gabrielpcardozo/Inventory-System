@@ -1,0 +1,63 @@
+<div class="text">
+    <h1>People#Index</h1>
+    <p>Here stay all people</p>
+</div>
+
+<div class="container">
+    <div class="people_column">
+        <h2>People</h2>
+        <ul>
+            <% @people.each do |person| %>
+            <li>
+                <p>Name: <%= person.full_name %></p>
+                <p>Contact: <%= person.email %></p>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+
+    <div class="employee_column">
+        <h2>Employee</h2>
+        <ul>
+            <% @employee.each do |employ| %>
+            <li>
+                <p>Name: <%= employ.full_name %></p>
+                <p>Contact: <%= employ.email %></p>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+
+    <div class="client_column">
+        <h2>Client</h2>
+        <ul>
+            <% @client.each do |client| %>
+            <li>
+                <p>Name: <%= client.full_name %></p>
+                <p>Contact: <%= client.email %></p>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+
+<style>
+  .text {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .people_column,
+  .employee_column,
+  .client_column {
+    width: 30%;
+  }
+
+  h2 {
+    text-align: center;
+  }
+</style>

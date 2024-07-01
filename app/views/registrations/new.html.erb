@@ -1,0 +1,36 @@
+<h1>Sing Up</h1>
+
+<div>
+    <%= form_with model: @client, url: signup_path, local: true do |form| %>
+    <div>
+        <%= form.label :first_name, "First Name" %><br>
+        <%= form.text_field :first_name, placeholder: "Enter first name" %>
+    </div>
+
+    <div>
+        <%= form.label :last_name, "Last Name" %><br>
+        <%= form.text_field :last_name, placeholder: "Enter last name" %>
+    </div>
+
+    <div>
+        <%= form.label :age, "Age" %><br>
+        <%= form.number_field :age, placeholder: "Enter age" %>
+    </div>
+
+    <div>
+        <%= form.label :email, "Email" %><br>
+        <%= form.email_field :email, placeholder: "Enter email" %>
+    </div>
+
+    <div>
+        <%= form.label :password, "Password "%>
+        <%= form.text_field :password, placeholder: "Password: " %> | 
+        <%= form.text_field :password_confirmation, placeholder: "Password Confirmation" %>
+    </div>
+
+  <div>
+    <%= form.submit "Create Person" %>
+  </div>
+
+</div>
+<% end %>

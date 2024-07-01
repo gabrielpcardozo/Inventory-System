@@ -1,0 +1,17 @@
+<h1>Inventory#show</h1>
+<p>Here we have the view about a unique object</p>
+<div class="Object">
+<h1><%= @items.name %></h1>
+    <p>Quantity: <%= @items.quantity %>
+    <% if @quantity_minimal %>
+      <span style="color: red;">(Need to restock!)</span>
+    <% end %>
+    </p>
+    <p>Price: <%= @items.formatted_price %></p>
+    <p>Total Value for all "<%= @items.name %>": <%= @product_totals %></p>
+</div>
+
+    
+<%= link_to 'Back', items_path(@items) %> | 
+<%= link_to 'Edit', edit_item_path(@items) %> | 
+<%= link_to "Destroy", item_path(@items), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

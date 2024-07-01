@@ -1,0 +1,62 @@
+<h1>Teste de página home</h1>
+<div class="links">
+    <h2>Links</h2>
+<div>
+<div class="menu">
+  <%= link_to 'Home', root_path, class: 'button' %>
+  <%= link_to 'Items', items_path, class: 'button' %>
+  <%= link_to 'New Item', new_item_path, class: 'button' %>
+</div>
+
+<h2>Search Item by Name</h2>
+<div>
+  <%= form_with url: root_path, method: :get, local: true do %>
+    <%= label_tag :name, 'Item Name' %>
+    <%= text_field_tag :name, params[:name] %>
+    <%= submit_tag 'Search', class: 'button' %>
+  <% end %>
+</div>
+
+<% if @items.present? %>
+  <h2>Search Results</h2>
+  <ul>
+    <% @items.each do |item| %>
+      <li>
+        <%= link_to item.name, item_path(item) %>
+      </li>
+    <% end %>
+  </ul>
+<% elsif params[:name].present? %>
+  <p>No items found with that name.</p>
+<% end %>
+
+<style>
+  .links{
+    text-align: center;
+    }
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .menu > div {
+    margin: 2px; /* Reduzido para diminuir o espaço entre os botões */
+  }
+  .button {
+    background-color: #007BFF; /* Cor de fundo azul */
+    border: none;
+    color: white; /* Cor do texto */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+  }
+</style>

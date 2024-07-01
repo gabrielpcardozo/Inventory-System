@@ -1,0 +1,26 @@
+<%= form_with model: @item, local: true do |form| %>
+  <div>
+    <%= form.label :name, "Name" %><br>
+    <%= form.text_field :name, placeholder: "Enter item name" %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, "Quantity" %><br>
+    <%= form.number_field :quantity, placeholder: "Enter quantity" %>
+  </div>
+
+  <div>
+    <%= form.label :price, "Price" %><br>
+    <%= form.number_field :price, step: "0.01", placeholder: "Enter price" %>
+  </div>
+
+<div>
+    <%= form.label :employee_id, "Who stocked this item?" %><br>
+    <%= form.collection_select :employee_id, Employee.all, :id, :first_name, prompt: "Select an employee" %>
+</div>
+
+
+  <div>
+    <%= form.submit "Enviar" %>
+  </div>
+<% end %>
