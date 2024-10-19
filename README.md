@@ -1,6 +1,6 @@
 # Inventory System
 
-Este é um projeto simples desenvolvido em Rails com o objetivo de explorar e entender melhor as características do framework. Foi criado para testar algumas curiosidades e aprender com o RailsGuides. O foco principal está em compreender os principais componentes do Rails: Models, Views e Controllers (MVC).
+Este é um projeto simples desenvolvido em Rails com o objetivo de explorar e entender melhor as características do framework. Foi criado para testar algumas curiosidades e aprender com o RailsGuides e o curso de RoR do Jackson Pires. O foco principal está em testar e aprimorar os conhecimentos no Ruby on Rails.
 
 # Funcionalidades
 

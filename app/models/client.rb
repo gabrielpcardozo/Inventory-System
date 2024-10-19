@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Client < Person
-    has_many :items, foreign_key: 'client_id'
+  has_many :items, optional: true, dependent: :nullify
 end

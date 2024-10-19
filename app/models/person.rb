@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 class Person < ApplicationRecord
-    include PersonMethods
-  
-    has_secure_password
-  
-    validates :first_name, :last_name, :age, :email, presence: true
-    validates :email, uniqueness: true
-  end
-  
+  include PersonMethods
+
+  has_secure_password
+
+  validates :first_name, :last_name, :age, :email, presence: true
+  validates :email, uniqueness: true
+end

@@ -1,0 +1,59 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.2.2
+  TargetRailsVersion: 7.1
+  NewCops: enable
+  Exclude:
+    - db/**/*
+    - Gemfile
+    - vendor/**/*
+    - config/environments/*
+    - bin/**/*
+
+Rails:
+  Enabled: true
+
+Layout/EndOfLine:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
+
+# Disables "Use nested module/class definitions instead of compact style" warning
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Increases "Class definition is too long" warning from 100 to 200
+Metrics/ClassLength:
+  Max: 300
+
+# Increases "Module has too many lines" warning from 100 to 200
+Metrics/ModuleLength:
+  Max: 200
+
+# Increases "Assignment Branch Condition size" warning from 15 to 30
+Metrics/AbcSize:
+  Max: 100
+
+Metrics/BlockLength:
+  Max: 500
+
+# Disables "Missing top-level class documentation comment" warning
+Style/Documentation:
+  Enabled: false
+
+# Disables "Line is too long" warning
+Layout/LineLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+# Disables "Method has too many lines" warning
+Metrics/MethodLength:
+  Enabled: false

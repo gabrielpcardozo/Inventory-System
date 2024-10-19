@@ -1,9 +1,11 @@
-module PersonMethods
-    extend ActiveSupport::Concern
+# frozen_string_literal: true
 
-    included do
-        def full_name
-            "#{first_name} #{last_name}"
-        end
+module PersonMethods
+  extend ActiveSupport::Concern
+
+  included do
+    def full_name
+      "#{first_name} #{last_name}"
     end
+  end
 end
