@@ -292,6 +292,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  i18n (~> 1.14, >= 1.14.1)
   importmap-rails
   jbuilder
   puma (>= 5.0)

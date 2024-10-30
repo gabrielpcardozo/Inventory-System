@@ -2,7 +2,7 @@
 
 namespace :dev do
   desc 'Configura o ambiente de desenvolvimento'
-  task setup_data_seeds: :environment do
+  task setup_data_enviorment: :environment do
     if Rails.env.development?
       show_spinner('Apagando BD...') { system('rails db:drop') }
       show_spinner('Criando BD...') { system('rails db:create') }
@@ -21,5 +21,14 @@ namespace :dev do
     else
       puts 'Você não está no ambiente de produção.'
     end
+  end
+
+  private
+
+  def show_spinner(msg_start, msg_end = 'Concluído!')
+    spinner = TTY::Spinner.new("[:spinner] #{msg_start}")
+    spinner.auto_spin
+    yield
+    spinner.success("(#{msg_end})")
   end
 end

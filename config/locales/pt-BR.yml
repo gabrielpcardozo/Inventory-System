@@ -1,0 +1,17 @@
+'pt-BR':
+  actual_locale: Portugues do BR.
+  activerecord:
+    models:
+      item:
+        one: Item
+        other: Itens
+    attributes:
+      item:
+        id: id
+        name: nome
+        quantity: quantidade
+        price: Preco
+        created_at: criado em
+        updated_at: atualizado em
+        client_id: id do cliente
+        employee_id: id do funcionario

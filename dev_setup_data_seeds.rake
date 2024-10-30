@@ -2,7 +2,7 @@
 
 namespace :dev do
   desc 'Configura o ambiente de desenvolvimento'
-  task setup_data_seeds: :environment do
+  task setup_data_enviorment: :environment do
     if Rails.env.development?
       show_spinner('Apagando BD...') { system('rails db:drop') }
       show_spinner('Criando BD...') { system('rails db:create') }
@@ -22,4 +22,5 @@ namespace :dev do
       puts 'Você não está no ambiente de produção.'
     end
   end
+
 end

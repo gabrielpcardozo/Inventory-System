@@ -49,6 +49,8 @@ gem 'bootsnap', require: false
 #Gem para criação de Terminais mais interativos e produtivos 
 gem 'tty-spinner', '~> 0.9.3'
 
+#Gem que traduz as paradinhas
+gem 'i18n', '~> 1.14', '>= 1.14.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
