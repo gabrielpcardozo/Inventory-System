@@ -33,6 +33,14 @@
   <p>No items found with that name.</p>
 <% end %>
 
+<div>
+  <p> Change Language</p>
+  <%= link_to 'Português', root_path(locale: 'pt-BR') %>
+  <%= ' |-| ' %>
+  <%= link_to 'Inglês', root_path(locale:'en') %>
+</div>
+
+
 <style>
   .links{
     text-align: center;

@@ -28,5 +28,19 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
   actual_locale: Ingles das Americas.
+  activerecord:
+    models:
+      item:
+        one: Item
+        other: Itens
+    attributes:
+      item:
+        id: id
+        name: name
+        quantity: quantiy
+        price: Price
+        created_at: created_at
+        updated_at: update_at
+        client_id: client id
+        employee_id: employee id
