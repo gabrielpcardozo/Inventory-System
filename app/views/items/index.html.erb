@@ -23,6 +23,24 @@
   </p>
 </div>
 
+<!-- Modal -->
+<div id="itemModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Detalhes do Item</h2>
+    <div id="modal-body">
+      <!-- Detalhes do item serão inseridos aqui -->
+    </div>
+  </div>
+</div>
+
+<button class="open-modal" data-item-id="<%= item.id %>">Ver Detalhes</button>
+
+<script type="module">
+  import setupModal from "my_modal";
+  setupModal();
+</script>
+
 <style>
   .dashboard {
     position: fixed;
