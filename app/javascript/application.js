@@ -16,3 +16,6 @@ import changeTextOnClick from "my_interaction";
 $(document).ready(function() {
   changeTextOnClick();
 });
+
+import "popper"
+import "bootstrap"

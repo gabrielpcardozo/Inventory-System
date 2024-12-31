@@ -20,7 +20,7 @@ export default function setupModal() {
 
       // Mostrar o modal
       modal.style.display = "block";
-    });
+    })
   });
 
   closeButton.addEventListener("click", () => {
@@ -32,4 +32,4 @@ export default function setupModal() {
       modal.style.display = "none";
     }
   });
-}
+} 

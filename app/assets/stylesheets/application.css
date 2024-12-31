@@ -12,7 +12,23 @@
  *
  *= require_tree .
  *= require_self
+
+ * // Configure your import map in config/importmap.rb
+ * // Read more: https://github.com/rails/importmap-rails
+
  */
+
+ 
+
+ @import "@hotwired/turbo-rails";
+
+ @import "bootstrap";
+ @import "font-awesome";
+ @import "stripe";
+ @import "controllers"
+
+
+
  .blue-text {
   color: blue;
 }

@@ -52,6 +52,9 @@ gem 'tty-spinner', '~> 0.9.3'
 #Gem que traduz as paradinhas
 gem 'i18n', '~> 1.14', '>= 1.14.1'
 
+#BootStrap gem
+
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]

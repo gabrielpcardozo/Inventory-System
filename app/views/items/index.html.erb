@@ -1,55 +1,86 @@
-<h1>Inventory #index </h1>
-<p>Here stay all items.</p>
+<!DOCTYPE html>
+<html>
 
-<h1>Items</h1>
+<head>
+  <%= stylesheet_link_tag "application" , data: { turbo_track: "reload" } %>
+    <%= javascript_importmap_tags %>
+</head>
 
-<ul>
-  <% @items.each do |item| %>
-    <li>      
-      <a href="<%= item_path(item) %>">
-        <p>Product: <%= item.name %></p>
-        <p>quantity: <%= item.quantity %></p>
-        <p>Value: <%= item.formatted_price %></p>
-      </a>
-      <%= link_to 'Edit', edit_item_path(item), class: "btn btn-primary" %>
-    </li>
-  <% end %>
-</ul>
+<body>
+  <h1>Inventory #index</h1>
+  <p>Here stay all items.</p>
 
-<div class ="dashboard">
-  <p>
-    <strong>Total Stock Value:</strong>
-    <%= Item.formatted_total_stock_value %>
-  </p>
-</div>
+  <div class="container-fluid">
+    <h1>Items</h1>
 
-<!-- Modal -->
-<div id="itemModal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close-button">&times;</span>
-    <h2>Detalhes do Item</h2>
-    <div id="modal-body">
-      <!-- Detalhes do item serão inseridos aqui -->
+    <div class="table-responsive">
+      <table class="table table-striped table-hover w-100">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+              <td>
+                <%= item.name %>
+              </td>
+              <td>
+                <%= item.quantity %>
+              </td>
+              <td>
+                <%= item.formatted_price %>
+              </td>
+              <td>
+                <%= link_to 'Details' , item_path(item), class: "btn btn-info btn-sm" %>
+                  <%= link_to 'Edit' , edit_item_path(item), class: "btn btn-primary btn-sm" %>
+              </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-</div>
 
-<button class="open-modal" data-item-id="<%= item.id %>">Ver Detalhes</button>
+  <div class="dashboard">
+    <p>
+      <strong>Total Stock Value:</strong>
+      <%= Item.formatted_total_stock_value %>
+    </p>
+  </div>
 
-<script type="module">
-  import setupModal from "my_modal";
-  setupModal();
-</script>
+  <!-- Modal -->
+  <div id="itemModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Detalhes do Item</h2>
+      <div id="modal-body">
+        <!-- Detalhes do item serão inseridos aqui -->
+      </div>
+    </div>
+  </div>
 
-<style>
-  .dashboard {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 300px;
-    background-color: #f8f9fa;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-</style>
+  <script type="module">
+    import setupModal from "my_modal";
+    setupModal();
+  </script>
+
+  <style>
+    .dashboard {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 300px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</body>
+
+</html>

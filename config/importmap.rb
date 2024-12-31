@@ -8,3 +8,5 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "jquery", to: "jquery.js"
 pin "my_interaction", to: "my_interaction.js"
 pin "my_module", to: "my_module.js"
+pin "popper", to: 'popper.js', preload: true
+pin "bootstrap", to: 'bootstrap.min.js', preload: true
